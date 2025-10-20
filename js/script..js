@@ -1,4 +1,4 @@
-// Smooth scrolling for navigation links
+// Smooth scrolling for navigation links and buttons
 document.addEventListener('DOMContentLoaded', function() {
     // Add smooth scrolling to all navigation links
     const navLinks = document.querySelectorAll('.nav-link');
@@ -8,55 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = targetElement.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
+            scrollToSection(targetId);
         });
     });
-    
-    // Fix button functionality
-    const getInTouchBtn = document.querySelector('.btn-primary');
-    const seeProjectsBtn = document.querySelector('.btn-outline');
-    
-    if (getInTouchBtn) {
-        getInTouchBtn.addEventListener('click', function() {
-            // Scroll to contact section
-            const contactSection = document.querySelector('#contact');
-            if (contactSection) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = contactSection.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    }
-    
-    if (seeProjectsBtn) {
-        seeProjectsBtn.addEventListener('click', function() {
-            // Scroll to projects section
-            const projectsSection = document.querySelector('#projects');
-            if (projectsSection) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = projectsSection.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    }
     
     // Form submission handler
     const contactForm = document.querySelector('.contact-form');
@@ -77,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Form submitted:', formObject);
             
             // Show success message
-            alert('Thank you for your message! We will get back to you soon.');
+            showNotification('Thank you for your message! We will get back to you soon.', 'success');
             
             // Reset form
             this.reset();
@@ -85,65 +39,119 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Add active state to navigation based on scroll position
-    function updateActiveNavLink() {
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const headerHeight = document.querySelector('.header').offsetHeight;
-        
-        let currentSection = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - headerHeight - 100;
-            const sectionHeight = section.offsetHeight;
-            
-            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                currentSection = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentSection}`) {
-                link.classList.add('active');
-            }
-        });
-    }
-    
-    window.addEventListener('scroll', updateActiveNavLink);
-    
-    // Initialize active nav link on page load
-    updateActiveNavLink();
-    
-    // Add scroll animation for elements
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-    
-    // Observe service cards and other elements for animation
-    const serviceCards = document.querySelectorAll('.service-card');
-    const aboutImage = document.querySelector('.about-image');
-    
-    serviceCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
+    window.addEventListener('scroll', function() {
+        updateActiveNavLink();
     });
     
-    if (aboutImage) {
-        aboutImage.style.opacity = '0';
-        aboutImage.style.transform = 'translateY(20px)';
-        aboutImage.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(aboutImage);
+    // Initial active state update
+    updateActiveNavLink();
+});
+
+// Function to scroll to specific section
+function scrollToSection(sectionId) {
+    const targetElement = document.querySelector(sectionId);
+    
+    if (targetElement) {
+        const headerHeight = document.querySelector('.header').offsetHeight;
+        const targetPosition = targetElement.offsetTop - headerHeight;
+        
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Function to scroll to contact section
+function scrollToContact() {
+    scrollToSection('#contact');
+}
+
+// Function to scroll to projects section
+function scrollToProjects() {
+    scrollToSection('#projects');
+}
+
+// Update active navigation link based on scroll position
+function updateActiveNavLink() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const headerHeight = document.querySelector('.header').offsetHeight;
+    
+    let currentSection = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - headerHeight - 100;
+        const sectionHeight = section.offsetHeight;
+        
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// Show notification function
+function showNotification(message, type = 'info') {
+    // Remove existing notification
+    const existingNotification = document.querySelector('.notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+    
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.textContent = message;
+    
+    // Add styles
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: ${type === 'success' ? '#10b981' : '#3b82f6'};
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 0.75rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transform: translateX(400px);
+        transition: transform 0.3s ease;
+        max-width: 300px;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Remove after 5 seconds
+    setTimeout(() => {
+        notification.style.transform = 'translateX(400px)';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.remove();
+            }
+        }, 300);
+    }, 5000);
+}
+
+// Add scroll effect to header
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 100) {
+        header.style.background = 'rgba(255, 255, 255, 0.98)';
+        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+    } else {
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
+        header.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
     }
 });
