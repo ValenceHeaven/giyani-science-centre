@@ -15,10 +15,11 @@
     .hero-buttons {
         flex-direction: row;
         max-width: none;
+        justify-content: center;
     }
     
     .services-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .contact-form {
@@ -35,10 +36,56 @@
 /* Large screens (desktops) */
 @media (min-width: 1024px) {
     .header {
-        padding: 1rem 2rem;
+        padding: 1.25rem 3rem;
     }
     
     section {
-        padding: 5rem 2rem;
+        padding: 6rem 2rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .hero-content {
+        padding-top: 4rem;
+    }
+}
+
+/* Extra large screens */
+@media (min-width: 1280px) {
+    .hero-title {
+        font-size: 4.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+/* Small screens */
+@media (max-width: 767px) {
+    .header {
+        padding: 1rem;
+    }
+    
+    .logo {
+        font-size: 1.1rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    section {
+        padding: 3rem 1rem;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
     }
 }
