@@ -1,0 +1,44 @@
+/* Medium screens (tablets) */
+@media (min-width: 768px) {
+    .nav {
+        display: flex;
+    }
+    
+    .hero-title {
+        font-size: 3.75rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: row;
+        max-width: none;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .contact-form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .form-input:nth-child(5),
+    .form-textarea,
+    .form-submit {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1024px) {
+    .header {
+        padding: 1rem 2rem;
+    }
+    
+    section {
+        padding: 5rem 2rem;
+    }
+}
