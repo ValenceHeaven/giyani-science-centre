@@ -72,13 +72,56 @@ p {
     align-items: center;
 }
 
-.logo {
+/* Logo Styles */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-image {
+    height: 50px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.logo-text {
     font-size: 1.5rem;
     font-weight: 700;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    transition: all 0.3s ease;
+}
+
+/* Logo hover effects */
+.logo-container:hover .logo-image {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.logo-container:hover .logo-text {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Enhanced Logo Styles with Fallback */
+.logo-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-fallback {
+    font-size: 2rem;
+    display: none;
+}
+
+.logo-image[style*="display: none"] + .logo-fallback {
+    display: block;
 }
 
 .nav {
