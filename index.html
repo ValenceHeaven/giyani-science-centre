@@ -8,33 +8,37 @@
     <link rel="stylesheet" href="styles/responsive.css">
 </head>
 <body>
-<header class="header">
-    <div class="container header-content">
-        <div class="logo-container">
-            <img src="images/logo.png" alt="Giyani Science Centre Logo" class="logo-image">
-            <div class="logo-text">Giyani Science Centre</div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <div class="logo-wrapper">
+                    <img src="images/logo.png" alt="Giyani Science Centre Logo" class="logo-image" onerror="this.style.display='none'">
+                    <div class="logo-fallback">🔬</div>
+                </div>
+                <div class="logo-text">Giyani Science Centre</div>
+            </div>
+            <ul class="nav">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#programs" class="nav-link">Programs</a></li>
+                <li><a href="#events" class="nav-link">Events</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#staff" class="nav-link">Our Team</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <button id="menu-toggle">☰</button>
+            </div>
         </div>
-        <ul class="nav">
-            <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#programs" class="nav-link">Programs</a></li>
-            <li><a href="#events" class="nav-link">Events</a></li>
-            <li><a href="#gallery" class="nav-link">Gallery</a></li>
-            <li><a href="#staff" class="nav-link">Our Team</a></li>
-            <li><a href="#faq" class="nav-link">FAQ</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-        <div class="mobile-menu">
-            <button id="menu-toggle">☰</button>
-        </div>
-    </div>
-</header>
+    </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <h1 class="hero-title">Giyani Science Centre</h1>
-            <p class="hero-subtitle">Research • Prototype • Validate - Turning ideas into working technology</p>
+            <p class="hero-subtitle">Research • Prototype • Validate — Turning ideas into working technology</p>
             <div class="hero-buttons">
                 <button class="btn btn-primary">Get in Touch</button>
                 <button class="btn btn-outline">See Programs</button>
@@ -61,7 +65,7 @@
     </section>
 
     <!-- Programs Section -->
-    <section id="programs" class="section" style="background-color: #f8fafc;">
+    <section id="programs" class="section programs-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Our Programs</h2>
@@ -172,7 +176,7 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="section" style="background-color: #f8fafc;">
+    <section id="gallery" class="section gallery-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Gallery</h2>
@@ -228,7 +232,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="section" style="background-color: #f8fafc;">
+    <section id="faq" class="section faq-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Frequently Asked Questions</h2>
