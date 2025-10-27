@@ -40,15 +40,11 @@
     
     /* Logo Mobile */
     .logo-image {
-        height: 2rem;
+        height: 2.5rem;
     }
     
-    .logo-text {
-        font-size: 1.25rem;
-    }
-    
-    .logo-container {
-        gap: 0.5rem;
+    .logo-fallback {
+        font-size: 2rem;
     }
     
     /* Hero Mobile */
@@ -77,6 +73,12 @@
     
     .section-title {
         font-size: 2.25rem;
+    }
+    
+    /* About Mobile */
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     /* Programs Mobile */
@@ -135,11 +137,19 @@
         padding: 2rem 1.5rem;
     }
     
+    .newsletter {
+        flex-direction: column;
+    }
+    
     /* Footer Mobile */
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
+    }
+    
+    .footer-logo .logo-image {
+        height: 2rem;
     }
 }
 
@@ -151,11 +161,7 @@
     
     /* Logo Tablet */
     .logo-image {
-        height: 2.25rem;
-    }
-    
-    .logo-text {
-        font-size: 1.4rem;
+        height: 2.75rem;
     }
     
     /* Hero Tablet */
@@ -165,6 +171,11 @@
     
     .hero-title {
         font-size: 3rem;
+    }
+    
+    /* About Tablet */
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     
     /* Programs Tablet */
@@ -202,11 +213,7 @@
     
     /* Logo Desktop */
     .logo-image {
-        height: 2.75rem;
-    }
-    
-    .logo-text {
-        font-size: 1.6rem;
+        height: 3.5rem;
     }
     
     /* Hero Desktop */
@@ -241,11 +248,7 @@
     
     /* Logo Extra Large */
     .logo-image {
-        height: 3rem;
-    }
-    
-    .logo-text {
-        font-size: 1.75rem;
+        height: 4rem;
     }
     
     .programs-grid {
