@@ -80,7 +80,7 @@ p {
 }
 
 .logo-image {
-    height: 2.5rem; /* Same height as the title */
+    height: 2.5rem;
     width: auto;
     transition: all 0.3s ease;
 }
@@ -96,7 +96,6 @@ p {
     line-height: 1;
 }
 
-/* Logo hover effects */
 .logo-container:hover .logo-image {
     transform: scale(1.05);
 }
@@ -108,7 +107,6 @@ p {
     background-clip: text;
 }
 
-/* Enhanced Logo Styles with Fallback */
 .logo-wrapper {
     display: flex;
     align-items: center;
@@ -124,6 +122,7 @@ p {
     display: block;
 }
 
+/* Navigation */
 .nav {
     display: flex;
     list-style: none;
@@ -159,6 +158,10 @@ p {
 
 .nav-link:hover::after, .nav-link.active::after {
     width: 80%;
+}
+
+.mobile-menu {
+    display: none;
 }
 
 /* Hero Section */
@@ -849,4 +852,43 @@ p {
     color: #94a3b8;
     position: relative;
     z-index: 1;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light: #0f172a;
+        --dark: #f1f5f9;
+        --text: #cbd5e1;
+    }
+    
+    body {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .hero-buttons, .mobile-menu {
+        display: none;
+    }
+    
+    .hero {
+        background: white !important;
+        color: black !important;
+        padding: 2rem 0 !important;
+    }
+    
+    .hero-title {
+        background: black !important;
+        -webkit-background-clip: initial !important;
+        -webkit-text-fill-color: initial !important;
+        background-clip: initial !important;
+        color: black !important;
+    }
+    
+    section {
+        padding: 2rem 0 !important;
+        break-inside: avoid;
+    }
 }
