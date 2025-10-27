@@ -76,11 +76,11 @@ p {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
 .logo-image {
-    height: 50px;
+    height: 2.5rem; /* Same height as the title */
     width: auto;
     transition: all 0.3s ease;
 }
@@ -93,11 +93,12 @@ p {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     transition: all 0.3s ease;
+    line-height: 1;
 }
 
 /* Logo hover effects */
 .logo-container:hover .logo-image {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.05);
 }
 
 .logo-container:hover .logo-text {
@@ -109,7 +110,6 @@ p {
 
 /* Enhanced Logo Styles with Fallback */
 .logo-wrapper {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
