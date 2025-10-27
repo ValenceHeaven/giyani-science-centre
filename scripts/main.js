@@ -139,44 +139,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (menuToggle && nav) {
         menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
         });
     }
-    
-    // Add header scroll effect
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('.header');
-        if (window.scrollY > 100) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-    
-    // Enhanced animations for gradient elements
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-        }
-    });
-    
-    // Add gradient animation to buttons on hover
-    const buttons = document.querySelectorAll('.btn');
-    buttons.forEach(button => {
-        button.addEventListener('mouseenter', function() {
-            this.style.background = this.classList.contains('btn-primary') 
-                ? 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)'
-                : 'linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%)';
-        });
-        
-        button.addEventListener('mouseleave', function() {
-            this.style.background = this.classList.contains('btn-primary') 
-                ? 'var(--gradient-accent)'
-                : 'transparent';
-        });
-    });
     
     // Add scroll animation for elements
     const observerOptions = {
@@ -193,10 +158,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    // Observe elements for animation
+    // Observe service cards and other elements for animation
     const programCards = document.querySelectorAll('.program-card');
     const staffCards = document.querySelectorAll('.staff-card');
-    const featureCards = document.querySelectorAll('.feature-card');
     
     programCards.forEach(card => {
         card.style.opacity = '0';
@@ -206,13 +170,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     staffCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
-    });
-    
-    featureCards.forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
         card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
