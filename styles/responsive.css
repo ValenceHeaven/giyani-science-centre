@@ -1,94 +1,37 @@
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .header {
-        padding: 1rem;
+// Add header scroll effect
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
     }
-    
-    .nav {
-        display: none;
-    }
-    
-    .hero-title {
-        font-size: 2rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .events-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .section {
-        padding: 3rem 1rem;
-    }
-    
-    .programs-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .staff-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+});
 
-@media (min-width: 769px) {
-    .mobile-menu {
-        display: none;
-    }
-}
+// Enhanced animations for gradient elements
+document.addEventListener('DOMContentLoaded', function() {
+    // Add parallax effect to hero section
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        }
+    });
 
-/* Medium screens (tablets) */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .programs-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .staff-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Large screens (desktops) */
-@media (min-width: 1024px) {
-    .header {
-        padding: 1.25rem 3rem;
-    }
-    
-    section {
-        padding: 6rem 2rem;
-    }
-    
-    .programs-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .hero {
-        padding-top: 8rem;
-    }
-}
-
-/* Extra large screens */
-@media (min-width: 1280px) {
-    .hero-title {
-        font-size: 4.5rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.5rem;
-    }
-}
+    // Add gradient animation to buttons on hover
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            this.style.background = this.classList.contains('btn-primary') 
+                ? 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)'
+                : 'linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%)';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            this.style.background = this.classList.contains('btn-primary') 
+                ? 'var(--gradient-accent)'
+                : 'transparent';
+        });
+    });
+});
