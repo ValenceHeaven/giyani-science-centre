@@ -3,165 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giyani Science Centre</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/responsive.css">
+    <title>Giyani Science Centre | STEM Education & Innovation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header Section -->
     <header class="header">
-        <div class="container header-content">
-            <div class="logo">Giyani Science Centre</div>
-            <ul class="nav">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#programs" class="nav-link">Programs</a></li>
-                <li><a href="#events" class="nav-link">Events</a></li>
-                <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                <li><a href="#staff" class="nav-link">Our Team</a></li>
-                <li><a href="#faq" class="nav-link">FAQ</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="mobile-menu">
-                <button id="menu-toggle">☰</button>
+        <div class="container">
+            <div class="logo">
+                <h2>Giyani Science Centre</h2>
             </div>
+            <nav class="nav">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#programs" class="nav-link">Programs</a>
+                <a href="#events" class="nav-link">Events</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#news" class="nav-link">News</a>
+                <a href="#staff" class="nav-link">Our Team</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
-            <h1 class="hero-title">Giyani Science Centre</h1>
-            <p class="hero-subtitle">Research • Prototype • Validate — Turning ideas into working technology</p>
+        <div class="hero-content">
+            <h2 class="hero-title">Giyani Science Centre</h2>
+            <p class="hero-subtitle">Inspiring Scientific Curiosity • Supporting Education • Connecting Community with STEM</p>
             <div class="hero-buttons">
                 <button class="btn btn-primary">Get in Touch</button>
-                <button class="btn btn-outline">See Programs</button>
+                <button class="btn btn-outline">Our Programs</button>
             </div>
+        </div>
+        <div class="hero-background">
+            <div class="gradient-overlay"></div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Us Section -->
     <section id="about" class="section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Us</h2>
-                <p class="section-subtitle">Empowering the next generation of scientists, engineers, and innovators in Giyani and beyond.</p>
-            </div>
+            <h2 class="section-title">About Giyani Science Centre</h2>
             <div class="about-content">
-                <p>The Giyani Science Centre is dedicated to promoting science education and engagement by offering interactive resources, event information, and learning opportunities in STEM (Science, Technology, Engineering, and Mathematics).</p>
-                <p>Our mission is to make science accessible, exciting, and relevant to everyone in our community, fostering local pride in innovation and creating pathways to learning, careers, and discovery.</p>
-                <div style="margin-top: 2rem;">
-                    <h3>Our Vision</h3>
-                    <p>To be a leading hub for STEM education and innovation in the Limpopo region, inspiring scientific curiosity and supporting the development of future leaders in science and technology.</p>
+                <div class="about-text">
+                    <h3>Science is for everyone—and it starts here in Giyani</h3>
+                    <p>The Giyani Science Centre is dedicated to promoting science education and engagement by offering interactive resources, event information, and learning opportunities in STEM (Science, Technology, Engineering, and Mathematics).</p>
+                    <div class="mission-vision">
+                        <div class="mission">
+                            <h4>Our Mission</h4>
+                            <p>To empower our community through accessible, exciting, and relevant scientific education that inspires future innovators.</p>
+                        </div>
+                        <div class="vision">
+                            <h4>Our Vision</h4>
+                            <p>To be the leading hub for STEM education in the region, nurturing the next generation of scientists, engineers, and problem-solvers.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <p>Science Centre Image</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Programs Section -->
-    <section id="programs" class="section" style="background-color: #f8fafc;">
+    <section id="programs" class="section programs-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Programs</h2>
-                <p class="section-subtitle">Engaging STEM education initiatives designed for students, teachers, and the community.</p>
-            </div>
+            <h2 class="section-title">Our Programs</h2>
             <div class="programs-grid">
                 <div class="program-card">
-                    <div class="program-image">🔬</div>
-                    <div class="program-content">
-                        <h3 class="program-title">School Outreach</h3>
-                        <p>Curriculum-aligned programs that bring hands-on science experiences to schools in the Giyani region.</p>
-                    </div>
+                    <div class="program-icon">🔬</div>
+                    <h3>STEM Education</h3>
+                    <p>Curriculum-aligned programs for schools that make science engaging and accessible.</p>
                 </div>
                 <div class="program-card">
-                    <div class="program-image">🤖</div>
-                    <div class="program-content">
-                        <h3 class="program-title">Robotics & Coding</h3>
-                        <p>Learn programming and engineering principles through fun, interactive robotics projects.</p>
-                    </div>
+                    <div class="program-icon">🤖</div>
+                    <h3>Robotics & Coding</h3>
+                    <p>Hands-on workshops introducing students to programming and robotics concepts.</p>
                 </div>
                 <div class="program-card">
-                    <div class="program-image">🌱</div>
-                    <div class="program-content">
-                        <h3 class="program-title">Environmental Science</h3>
-                        <p>Explore local ecosystems and sustainability through hands-on experiments and field studies.</p>
-                    </div>
+                    <div class="program-icon">🌱</div>
+                    <h3>Environmental Science</h3>
+                    <p>Exploring local ecosystems and sustainable practices through interactive activities.</p>
                 </div>
                 <div class="program-card">
-                    <div class="program-image">👩‍🔬</div>
-                    <div class="program-content">
-                        <h3 class="program-title">Youth Mentorship</h3>
-                        <p>Connect with STEM professionals and receive guidance on educational and career pathways.</p>
-                    </div>
+                    <div class="program-icon">👨‍🏫</div>
+                    <h3>Teacher Development</h3>
+                    <p>Training and resources for educators to enhance STEM teaching methodologies.</p>
                 </div>
                 <div class="program-card">
-                    <div class="program-image">🧪</div>
-                    <div class="program-content">
-                        <h3 class="program-title">Science Workshops</h3>
-                        <p>Regular workshops covering various scientific topics for different age groups and skill levels.</p>
-                    </div>
+                    <div class="program-icon">🔍</div>
+                    <h3>Science Clubs</h3>
+                    <p>After-school programs that encourage exploration and scientific discovery.</p>
                 </div>
                 <div class="program-card">
-                    <div class="program-image">🔭</div>
-                    <div class="program-content">
-                        <h3 class="program-title">Astronomy Club</h3>
-                        <p>Explore the wonders of the universe through telescope observations and astronomy activities.</p>
-                    </div>
+                    <div class="program-icon">🎯</div>
+                    <h3>Career Guidance</h3>
+                    <p>Connecting students with STEM career opportunities and mentorship programs.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Events Section -->
-    <section id="events" class="section">
+    <section id="events" class="section events-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Upcoming Events</h2>
-                <p class="section-subtitle">Join us for workshops, science fairs, and community engagement activities.</p>
-            </div>
-            <div class="events-container">
-                <div class="calendar">
-                    <div class="calendar-header">
-                        <button id="prev-month">←</button>
-                        <h3 id="current-month">June 2023</h3>
-                        <button id="next-month">→</button>
-                    </div>
-                    <div class="calendar-grid" id="calendar-days">
-                        <!-- Calendar days will be populated by JavaScript -->
-                    </div>
-                </div>
-                <div class="events-list">
-                    <div class="event-card">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="events-calendar">
+                <div class="calendar-placeholder">
+                    <h3>Events Calendar</h3>
+                    <p>Science fairs, workshops, public lectures, and community engagement events will be displayed here.</p>
+                    <div class="event-sample">
                         <div class="event-date">
-                            <div class="event-day">15</div>
-                            <div class="event-month">JUN</div>
+                            <span class="month">OCT</span>
+                            <span class="day">15</span>
                         </div>
                         <div class="event-details">
-                            <h3 class="event-title">Science Fair 2023</h3>
-                            <p>Annual science fair showcasing student projects from schools across Giyani. Open to the public with interactive exhibits and demonstrations.</p>
-                            <p><strong>Time:</strong> 9:00 AM - 3:00 PM</p>
-                        </div>
-                    </div>
-                    <div class="event-card">
-                        <div class="event-date">
-                            <div class="event-day">22</div>
-                            <div class="event-month">JUN</div>
-                        </div>
-                        <div class="event-details">
-                            <h3 class="event-title">Robotics Workshop</h3>
-                            <p>Hands-on introduction to robotics for high school students. No prior experience required. Limited spots available.</p>
-                            <p><strong>Time:</strong> 10:00 AM - 2:00 PM</p>
-                        </div>
-                    </div>
-                    <div class="event-card">
-                        <div class="event-date">
-                            <div class="event-day">05</div>
-                            <div class="event-month">JUL</div>
-                        </div>
-                        <div class="event-details">
-                            <h3 class="event-title">Career Day: Women in STEM</h3>
-                            <p>Meet and learn from successful women in science, technology, engineering, and mathematics careers.</p>
-                            <p><strong>Time:</strong> 1:00 PM - 4:00 PM</p>
+                            <h4>Annual Science Fair</h4>
+                            <p>Showcasing student projects and innovations</p>
+                            <span class="event-time">9:00 AM - 3:00 PM</span>
                         </div>
                     </div>
                 </div>
@@ -170,181 +134,161 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="section" style="background-color: #f8fafc;">
+    <section id="gallery" class="section gallery-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Gallery</h2>
-                <p class="section-subtitle">Moments from our events, workshops, and community activities.</p>
-            </div>
+            <h2 class="section-title">Gallery</h2>
             <div class="gallery-grid">
-                <div class="gallery-item">Image 1</div>
-                <div class="gallery-item">Image 2</div>
-                <div class="gallery-item">Image 3</div>
-                <div class="gallery-item">Image 4</div>
-                <div class="gallery-item">Image 5</div>
-                <div class="gallery-item">Image 6</div>
-                <div class="gallery-item">Image 7</div>
-                <div class="gallery-item">Image 8</div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">Photo 1</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">Photo 2</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">Photo 3</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">Photo 4</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">Photo 5</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">Photo 6</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="section news-section">
+        <div class="container">
+            <h2 class="section-title">News & Updates</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <h3>New Partnership with Local Schools</h3>
+                    <p class="news-date">September 15, 2023</p>
+                    <p>We're excited to announce new collaborations with five local schools to enhance STEM education.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="news-card">
+                    <h3>Robotics Competition Winners</h3>
+                    <p class="news-date">August 28, 2023</p>
+                    <p>Our students excelled at the regional robotics competition, bringing home two first-place awards.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="news-card">
+                    <h3>New Environmental Science Program</h3>
+                    <p class="news-date">July 10, 2023</p>
+                    <p>Launching a new program focused on local ecosystems and conservation practices.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Staff Section -->
-    <section id="staff" class="section">
+    <section id="staff" class="section staff-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Team</h2>
-                <p class="section-subtitle">Meet the dedicated professionals behind the Giyani Science Centre.</p>
-            </div>
+            <h2 class="section-title">Our Team</h2>
             <div class="staff-grid">
                 <div class="staff-card">
-                    <div class="staff-image">👨‍💼</div>
-                    <h3 class="staff-name">Dr. James Moloto</h3>
-                    <p class="staff-role">Centre Manager</p>
-                    <p>With a PhD in Science Education, James leads the strategic direction of the centre.</p>
+                    <div class="staff-image">
+                        <div class="image-placeholder">Photo</div>
+                    </div>
+                    <h3>Centre Manager</h3>
+                    <p>Oversees operations and strategic direction of the Science Centre.</p>
                 </div>
                 <div class="staff-card">
-                    <div class="staff-image">👩‍🏫</div>
-                    <h3 class="staff-name">Sarah Nkosi</h3>
-                    <p class="staff-role">Senior Science Facilitator</p>
-                    <p>Sarah specializes in developing engaging curriculum materials for schools.</p>
+                    <div class="staff-image">
+                        <div class="image-placeholder">Photo</div>
+                    </div>
+                    <h3>Science Facilitators</h3>
+                    <p>Dedicated educators who bring STEM concepts to life through interactive sessions.</p>
                 </div>
                 <div class="staff-card">
-                    <div class="staff-image">👨‍🔬</div>
-                    <h3 class="staff-name">Thomas Baloyi</h3>
-                    <p class="staff-role">Robotics Coordinator</p>
-                    <p>Thomas brings his engineering background to our robotics and coding programs.</p>
-                </div>
-                <div class="staff-card">
-                    <div class="staff-image">👩‍🔬</div>
-                    <h3 class="staff-name">Lerato Mabunda</h3>
-                    <p class="staff-role">Environmental Science Educator</p>
-                    <p>Lerato leads our environmental programs with a focus on local ecosystems.</p>
+                    <div class="staff-image">
+                        <div class="image-placeholder">Photo</div>
+                    </div>
+                    <h3>Program Coordinators</h3>
+                    <p>Develop and implement our diverse range of educational programs.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="section" style="background-color: #f8fafc;">
+    <section id="faq" class="section faq-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Find answers to common questions about the Giyani Science Centre.</p>
-            </div>
-            <div class="faq-container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What are your operating hours?</span>
-                        <span>+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We are open Monday to Friday from 8:00 AM to 5:00 PM, and on Saturdays from 9:00 AM to 1:00 PM for special programs and events. We are closed on Sundays and public holidays.</p>
-                    </div>
+                    <h3>What are your operating hours?</h3>
+                    <p>We're open Monday to Friday from 8:00 AM to 5:00 PM, and on Saturdays from 9:00 AM to 1:00 PM for special programs.</p>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How can schools arrange visits to the Science Centre?</span>
-                        <span>+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Schools can book visits by contacting us via phone or email at least two weeks in advance. We offer curriculum-aligned programs for different grade levels and can accommodate groups of up to 50 students per session.</p>
-                    </div>
+                    <h3>How can schools arrange visits?</h3>
+                    <p>Schools can contact us via phone or email to schedule visits. We recommend booking at least two weeks in advance.</p>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Are there programs for adults and families?</span>
-                        <span>+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes! We offer family science days, adult workshops, and community events throughout the year. Check our events calendar for upcoming activities suitable for all ages.</p>
-                    </div>
+                    <h3>Are there fees for your programs?</h3>
+                    <p>Many of our programs are free or offered at minimal cost thanks to community partnerships and sponsorships.</p>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Do you offer volunteering opportunities?</span>
-                        <span>+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We welcome volunteers with backgrounds in science, education, or simply a passion for sharing knowledge. Please contact us to learn about current volunteer opportunities and requirements.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How can I support the Science Centre?</span>
-                        <span>+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>There are several ways to support us: become a corporate sponsor, make a donation, volunteer your time, or help spread the word about our programs in your community. Contact us to discuss partnership opportunities.</p>
-                    </div>
+                    <h3>Do you offer programs for adults?</h3>
+                    <p>Yes! We host evening workshops and community science events that are open to all ages.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section id="contact" class="section contact-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Contact Us</h2>
-                <p class="section-subtitle">Get in touch with the Giyani Science Centre team.</p>
-            </div>
-            <div class="contact-container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
                 <div class="contact-info">
+                    <h3>Get In Touch</h3>
                     <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div>
-                            <h3>Visit Us</h3>
-                            <p>123 Science Avenue<br>Giyani, Limpopo 0826<br>South Africa</p>
-                        </div>
+                        <h4>Address</h4>
+                        <p>Giyani Science Centre<br>123 Science Street, Giyani, 0826</p>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">📞</div>
-                        <div>
-                            <h3>Call Us</h3>
-                            <p>+27 15 123 4567<br>Monday - Friday, 8:00 AM - 5:00 PM</p>
-                        </div>
+                        <h4>Phone</h4>
+                        <p>+27 15 123 4567</p>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">✉️</div>
-                        <div>
-                            <h3>Email Us</h3>
-                            <p>info@giyaniscience.org.za<br>education@giyaniscience.org.za</p>
-                        </div>
+                        <h4>Email</h4>
+                        <p>info@giyaniscience.org.za</p>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">🌐</div>
-                        <div>
-                            <h3>Follow Us</h3>
-                            <p>Stay connected through our social media channels</p>
-                            <div class="social-links">
-                                <a href="#" class="social-link">f</a>
-                                <a href="#" class="social-link">in</a>
-                                <a href="#" class="social-link">X</a>
-                                <a href="#" class="social-link">ig</a>
-                            </div>
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">FB</a>
+                            <a href="#" class="social-icon">IG</a>
+                            <a href="#" class="social-icon">TW</a>
+                            <a href="#" class="social-icon">YT</a>
                         </div>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Full Name</label>
-                        <input type="text" id="name" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email Address</label>
-                        <input type="email" id="email" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject" class="form-label">Subject</label>
-                        <input type="text" id="subject" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea id="message" class="form-textarea" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" class="form-textarea" rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -355,43 +299,30 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Giyani Science Centre</h3>
-                    <p>Promoting science education and engagement in Giyani and the surrounding communities.</p>
+                    <p>Inspiring scientific curiosity and innovation in our community.</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li class="footer-link"><a href="#home">Home</a></li>
-                        <li class="footer-link"><a href="#about">About Us</a></li>
-                        <li class="footer-link"><a href="#programs">Programs</a></li>
-                        <li class="footer-link"><a href="#events">Events</a></li>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Resources</h3>
-                    <ul class="footer-links">
-                        <li class="footer-link"><a href="#gallery">Gallery</a></li>
-                        <li class="footer-link"><a href="#staff">Our Team</a></li>
-                        <li class="footer-link"><a href="#faq">FAQ</a></li>
-                        <li class="footer-link"><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Connect With Us</h3>
-                    <div class="social-links">
-                        <a href="#" class="social-link">f</a>
-                        <a href="#" class="social-link">in</a>
-                        <a href="#" class="social-link">X</a>
-                        <a href="#" class="social-link">ig</a>
-                    </div>
+                    <h4>Contact Info</h4>
+                    <p>123 Science Street, Giyani</p>
+                    <p>+27 15 123 4567</p>
+                    <p>info@giyaniscience.org.za</p>
                 </div>
             </div>
-            <div class="copyright">
+            <div class="footer-bottom">
                 <p>&copy; 2023 Giyani Science Centre. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="scripts/main.js"></script>
-    <script src="scripts/calendar.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
