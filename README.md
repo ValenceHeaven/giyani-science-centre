@@ -12,7 +12,7 @@ Official website for the Giyani Science Centre - Promoting STEM education and co
 
 ## Live Website
 
-Visit: https://[your-username].github.io/giyani-science-centre
+Visit: [https://valenceheaven.github.io/giyani-science-centre/]
 
 ## Technologies Used
 
@@ -23,8 +23,8 @@ Visit: https://[your-username].github.io/giyani-science-centre
 
 ## Maintenance
 
-This website is maintained by the Centre Manager and Science Facilitators.
+This website is maintained by the Web Design and Developers Students.
 
 ## Contact
 
-For website issues or updates, please contact the Science Centre administration.
+For website issues or updates, please contact the Web Design and Developers Students.
