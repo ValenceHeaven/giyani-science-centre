@@ -18,11 +18,16 @@
     --border: #dadce0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--dark-text);
     background-color: var(--background);
+    overflow-x: hidden;
 }
 
 .container {
@@ -86,10 +91,11 @@ body {
     background: linear-gradient(90deg, var(--primary-blue), var(--accent-green));
 }
 
-/* Hero Section - UPDATED WITH BACKGROUND IMAGE */
+/* Hero Section - FIXED */
 .hero {
     position: relative;
     height: 100vh;
+    min-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -135,6 +141,7 @@ body {
     z-index: 3;
     max-width: 800px;
     padding: 0 2rem;
+    margin-top: -60px; /* Compensate for fixed header */
 }
 
 .hero-title {
@@ -206,9 +213,20 @@ body {
     transform: translateY(-3px);
 }
 
-/* Section Styles */
+/* Section Styles - FIXED */
 .section {
     padding: 5rem 0;
+    position: relative;
+    z-index: 2;
+    background: var(--background);
+}
+
+/* Add specific background for alternate sections */
+.programs-section,
+.gallery-section,
+.staff-section,
+.contact-section {
+    background: var(--light-bg);
 }
 
 .section-title {
@@ -284,10 +302,6 @@ body {
 }
 
 /* Programs Section */
-.programs-section {
-    background: var(--light-bg);
-}
-
 .programs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -374,10 +388,6 @@ body {
 }
 
 /* Gallery Section */
-.gallery-section {
-    background: var(--light-bg);
-}
-
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -447,10 +457,6 @@ body {
 }
 
 /* Staff Section */
-.staff-section {
-    background: var(--light-bg);
-}
-
 .staff-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -510,10 +516,6 @@ body {
 }
 
 /* Contact Section */
-.contact-section {
-    background: var(--light-bg);
-}
-
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -604,6 +606,8 @@ body {
     background: linear-gradient(135deg, var(--dark-text), #1a1a2e);
     color: white;
     padding: 3rem 0 1rem;
+    position: relative;
+    z-index: 2;
 }
 
 .footer-content {
