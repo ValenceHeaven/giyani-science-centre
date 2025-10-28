@@ -1,6 +1,6 @@
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle (if needed in future)
+    // Mobile menu toggle
     const menuToggle = document.createElement('button');
     menuToggle.classList.add('menu-toggle');
     menuToggle.innerHTML = '☰';
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add animation to elements when they come into view
     const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.program-card, .news-card, .staff-card, .faq-item');
+        const elements = document.querySelectorAll('.program-card, .news-card, .staff-card, .faq-item, .science-centre-image');
         
         elements.forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     // Set initial state for animated elements
-    const animatedElements = document.querySelectorAll('.program-card, .news-card, .staff-card, .faq-item');
+    const animatedElements = document.querySelectorAll('.program-card, .news-card, .staff-card, .faq-item, .science-centre-image');
     animatedElements.forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
@@ -156,4 +156,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Check for elements in view on scroll
     window.addEventListener('scroll', animateOnScroll);
+    
+    // Add loading state for images
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        img.addEventListener('load', function() {
+            this.style.opacity = '1';
+        });
+        
+        // Set initial opacity for smooth loading
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.3s ease';
+    });
 });
