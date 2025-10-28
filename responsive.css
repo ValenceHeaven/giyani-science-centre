@@ -143,6 +143,26 @@
         grid-template-columns: 1fr;
     }
     
+    /* Social icons adjustments for small screens */
+    .social-icons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .social-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .social-img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+    
     .event-sample {
         flex-direction: column;
         text-align: center;
