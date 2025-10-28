@@ -86,7 +86,7 @@ body {
     background: linear-gradient(90deg, var(--primary-blue), var(--accent-green));
 }
 
-/* Hero Section */
+/* Hero Section - UPDATED WITH BACKGROUND IMAGE */
 .hero {
     position: relative;
     height: 100vh;
@@ -98,9 +98,41 @@ body {
     overflow: hidden;
 }
 
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(3px) brightness(0.7);
+    transform: scale(1.02); /* Prevents white edges from blur */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(26, 115, 232, 0.4) 0%,
+        rgba(52, 168, 83, 0.3) 50%,
+        rgba(249, 171, 0, 0.2) 100%
+    );
+    z-index: 2;
+}
+
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     max-width: 800px;
     padding: 0 2rem;
 }
@@ -109,13 +141,16 @@ body {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease-out;
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
     margin-bottom: 2.5rem;
     opacity: 0.9;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease-out 0.2s both;
 }
 
 .hero-buttons {
@@ -123,6 +158,18 @@ body {
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .btn {
@@ -138,42 +185,25 @@ body {
 .btn-primary {
     background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
     color: white;
-    box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3);
+    box-shadow: 0 4px 15px rgba(26, 115, 232, 0.4);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(26, 115, 232, 0.4);
+    box-shadow: 0 6px 20px rgba(26, 115, 232, 0.6);
 }
 
 .btn-outline {
     background: transparent;
     color: white;
     border: 2px solid white;
+    backdrop-filter: blur(10px);
 }
 
 .btn-outline:hover {
     background: white;
     color: var(--primary-blue);
-}
-
-.hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, var(--primary-blue), var(--accent-green), var(--accent-orange));
-    z-index: 1;
-}
-
-.gradient-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx=".5" cy="1" r="1"><stop offset="0%" stop-color="%231a73e8" stop-opacity=".8"/><stop offset="100%" stop-color="%2334a853" stop-opacity="0"/></radialGradient></defs><path fill="url(%23a)" d="M0 0h1000v1000H0z"/></svg>') no-repeat center/cover;
+    transform: translateY(-3px);
 }
 
 /* Section Styles */
@@ -479,7 +509,7 @@ body {
     color: var(--primary-blue);
 }
 
-/* Contact Section - UPDATED SOCIAL ICONS */
+/* Contact Section */
 .contact-section {
     background: var(--light-bg);
 }
@@ -569,7 +599,7 @@ body {
     width: 100%;
 }
 
-/* Footer - UPDATED SOCIAL ICONS */
+/* Footer */
 .footer {
     background: linear-gradient(135deg, var(--dark-text), #1a1a2e);
     color: white;
