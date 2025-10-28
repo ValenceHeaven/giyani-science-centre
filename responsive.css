@@ -56,6 +56,11 @@
     .staff-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+    
+    /* Science Centre Image adjustments for large screens */
+    .science-centre-image {
+        height: 450px;
+    }
 }
 
 /* Extra large screens */
@@ -70,6 +75,11 @@
     
     .container {
         padding: 0 2rem;
+    }
+    
+    /* Science Centre Image adjustments for extra large screens */
+    .science-centre-image {
+        height: 500px;
     }
 }
 
@@ -119,6 +129,12 @@
         grid-template-columns: 1fr;
     }
     
+    /* Science Centre Image adjustments for small screens */
+    .science-centre-image {
+        height: 300px;
+        margin-top: 1.5rem;
+    }
+    
     .program-card, .news-card, .staff-card, .faq-item {
         padding: 1.5rem;
     }
@@ -135,5 +151,11 @@
     .event-date {
         margin-right: 0;
         margin-bottom: 1rem;
+    }
+    
+    /* Staff photo adjustments for small screens */
+    .staff-photo {
+        width: 120px;
+        height: 120px;
     }
 }
