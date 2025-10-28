@@ -25,23 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (targetElement) {
                 const headerHeight = document.querySelector('.header').offsetHeight;
-                let targetPosition;
-                
-                if (targetId === '#home') {
-                    // For home, scroll to top
-                    targetPosition = 0;
-                } else {
-                    // For other sections, account for header height
-                    targetPosition = targetElement.offsetTop - headerHeight;
-                }
+                const targetPosition = targetElement.offsetTop - headerHeight;
                 
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
                 });
-                
-                // Update URL without page reload
-                history.pushState(null, null, targetId);
             }
         });
     });
@@ -112,30 +101,22 @@ document.addEventListener('DOMContentLoaded', function() {
     function highlightActiveNavLink() {
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
-        const headerHeight = document.querySelector('.header').offsetHeight;
-        const scrollPosition = window.scrollY + headerHeight + 100;
         
         let currentSection = '';
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
+            const sectionHeight = section.clientHeight;
+            const headerHeight = document.querySelector('.header').offsetHeight;
             
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                currentSection = sectionId;
+            if (window.scrollY >= (sectionTop - headerHeight - 50)) {
+                currentSection = section.getAttribute('id');
             }
         });
         
-        // Special case for home section
-        if (scrollPosition < document.querySelector('#about').offsetTop) {
-            currentSection = 'home';
-        }
-        
         navLinks.forEach(link => {
             link.classList.remove('active');
-            const linkHref = link.getAttribute('href').substring(1);
-            if (linkHref === currentSection) {
+            if (link.getAttribute('href') === `#${currentSection}`) {
                 link.classList.add('active');
             }
         });
@@ -149,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add animation to elements when they come into view
     const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.program-card, .news-card, .staff-card, .faq-item, .science-centre-image, .mission, .vision');
+        const elements = document.querySelectorAll('.program-card, .news-card, .staff-card, .faq-item, .science-centre-image');
         
         elements.forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
@@ -163,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     // Set initial state for animated elements
-    const animatedElements = document.querySelectorAll('.program-card, .news-card, .staff-card, .faq-item, .science-centre-image, .mission, .vision');
+    const animatedElements = document.querySelectorAll('.program-card, .news-card, .staff-card, .faq-item, .science-centre-image');
     animatedElements.forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
@@ -187,25 +168,4 @@ document.addEventListener('DOMContentLoaded', function() {
         img.style.opacity = '0';
         img.style.transition = 'opacity 0.3s ease';
     });
-    
-    // Handle page load with hash in URL
-    function handleInitialScroll() {
-        if (window.location.hash) {
-            const targetElement = document.querySelector(window.location.hash);
-            if (targetElement) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = targetElement.offsetTop - headerHeight;
-                
-                setTimeout(() => {
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }, 100);
-            }
-        }
-    }
-    
-    // Call on page load
-    handleInitialScroll();
 });
