@@ -4,6 +4,10 @@
         display: flex;
     }
     
+    .menu-toggle {
+        display: none;
+    }
+    
     .hero-title {
         font-size: 3.75rem;
     }
@@ -107,6 +111,15 @@
     
     .nav.active {
         display: flex;
+    }
+    
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--dark-text);
     }
     
     .hero-title {
