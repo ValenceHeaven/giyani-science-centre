@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add animation to elements when they come into view
     const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.program-card, .news-card, .staff-card, .faq-item, .science-centre-image');
+        const elements = document.querySelectorAll('.program-card, .news-card, .staff-card, .faq-item, .science-centre-image, .events-calendar');
         
         elements.forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     // Set initial state for animated elements
-    const animatedElements = document.querySelectorAll('.program-card, .news-card, .staff-card, .faq-item, .science-centre-image');
+    const animatedElements = document.querySelectorAll('.program-card, .news-card, .staff-card, .faq-item, .science-centre-image, .events-calendar');
     animatedElements.forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
